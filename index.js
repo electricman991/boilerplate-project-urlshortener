@@ -25,7 +25,7 @@ app.get('/api/hello', function(req, res) {
 
 const urls = {}
 app.post('/api/shorturl', (req, res) => {
-  const originalurl = req.body.URL
+  const originalurl = req.body.url
   
   try {
   const hostname  = new URL(originalurl).hostname
@@ -42,7 +42,6 @@ app.post('/api/shorturl', (req, res) => {
   }
 
   catch {
-    console.log("error")
     res.json({error: 'invalid url'})
   }
 })
